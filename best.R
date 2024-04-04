@@ -19,17 +19,15 @@ best <- function(state, outcome) {
   if ( (outcome != "heart attack") && (outcome != "heart failure") && 
        (outcome != "pneumonia") ) {
     stop("Invalid outcome")
-       }
+  }
   
   # Find the hospital with lowest 30 day mortality rate in the state
   
   # Create a data frame with only state hospitals
   state_data <- data[data$State == state, ]
-  #print(head(state_data))
   
   # Order the data frame by hospital names alphabetically
   state_data <- state_data[ order(state_data$Hospital.Name), ]
-  #print(head(state_data))
   
   # Find the hospital (which one has minimum deaths) per outcome
   if (outcome == "heart attack") {

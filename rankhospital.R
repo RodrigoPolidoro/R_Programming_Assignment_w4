@@ -7,7 +7,7 @@ rankhospital <- function(state, outcome, num = "best") {
   # Read the data
   data <- read.csv("outcome-of-care-measures.csv")
   
-  # Check whether the state and outcome are valid
+  # Check whether the state, outcome and rank are valid
   
   # Check if state value appears on State column of data frame
   # If not stop the function
@@ -30,7 +30,6 @@ rankhospital <- function(state, outcome, num = "best") {
   
   # Create a data frame with only state hospitals
   state_data <- data[data$State == state, ]
-
 
   # Change column of mortality rates to numeric
   # Remove NAs values from column
